@@ -18,16 +18,16 @@ int first()
 	{
 		if (a[i] < min)
 		{
-			min = a[i];
+ min = a[i];
 		}
 
 		if (a[i] > max)
 		{
-			max = a[i];
+ max = a[i];
 		}
-		i++;
+ i++;
 	}
-	k = max - min;
+ k = max - min;
 	printf("\nРазница между максимлаьным и минимальным значением = %d\n", k);
 	return 0;
 }
@@ -39,17 +39,17 @@ int second()
 	const int N = 4;
 	int sum = 0;
 	int mat[M][N];
-	cout << "Matrix " << endl;
+ cout << "Matrix ";
 	for (int i = 0; i < M; i++)
 	{
 		for (int j = 0; j < N; j++)
 		{
-			mat[i][j] = rand() % 9;
-			cout << mat[i][j] << " ";
+ mat[i][j] = rand() % 9;
+ cout << mat[i][j] << " ";
 		}
-		cout << endl;
+ cout << endl;
 	}
-	cout << endl;
+ cout << endl;
 	for (int j = 0; j < N; j++)
 	{
 		sum = 0;
@@ -65,7 +65,7 @@ int second()
 int third()
 {
     srand(time(NULL));
-	printf("Разница между максимлаьным и минимальным значением\n");
+	//printf("Разница между максимальным и минимальным значением\n");
 	int* mas2;
 
 	int n = 0;
@@ -169,12 +169,6 @@ int fifth()
 			pr = chet;
 
 		}
-		/*if (strcmp(sl, nomzach2) == 0 && pr != chet)
-		{
-		printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
-		chet++;
-		pr = chet;
-		}*/
 	}
 	if (chet == 0)
 		printf("|_______Ничего не найдено_______|\n");
@@ -186,7 +180,8 @@ int main()
 	setlocale(LC_ALL, "Russian");
     int num = 0;
 	printf("\nВведите номер задания: \n");
-    scanf("%d", num);
+    //scanf("%d", num);
+	cin >> num;
     switch(num){
         case 1:
             first();
