@@ -184,7 +184,7 @@ int fifth()
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-    int num;
+    int num = 0;
 	printf("\nВведите номер задания: \n");
     scanf("%d", num);
     switch(num){
