@@ -28,7 +28,8 @@ int first()
 		i++;
 	}
 	k = max - min;
-	printf("\n����巽鱈竪旦�� 狸奪脱辰坦 狸��棚単竪狸谷��端鱈短狸 竪 狸竪鱈竪狸��谷端鱈短狸 巽鱈��歎奪鱈竪奪狸 = %d\n", k);
+	printf("\nРазница между максимлаьным и минимальным значением = %d\n", k);
+	return 0;
 }
 
 int second()
@@ -58,16 +59,17 @@ int second()
 		}
 		cout << sum << endl;
 	}
+	return 0;
 }
 
 int third()
 {
     srand(time(NULL));
-	printf("����辰��鱈竪奪 3:\n");
+	printf("Разница между максимлаьным и минимальным значением\n");
 	int* mas2;
 
 	int n = 0;
-	printf("��但奪辰竪嘆奪 棚樽谷-但樽 箪谷奪狸奪鱈嘆樽但: ");
+	printf("Введите кол-во элементов: ");
 	scanf("%d", &n);
 	mas2 = (int*)malloc(n * sizeof(int));
 	for (int i = 0; i < n; i++)
@@ -77,12 +79,13 @@ int third()
 	}
 	free(mas2);
 	printf("\n");
+	return 0;
 }
 
 int fourth()
 {
     srand(time(NULL));
-	printf("����辰��鱈竪奪 4:\n");
+	printf("Задание 4:\n");
 	int sum = 0;
 	int mas[5][5] = { 0 };
 	for (int i = 0; i < 5; i++)
@@ -97,6 +100,7 @@ int fourth()
 		sum = 0;
 	}
 	printf("\n");
+	return 0;
 }
 
 int fifth()
@@ -110,33 +114,33 @@ int fifth()
 		int Nomzach;
 	} stud[3];
 	int kolv = 0; //flag = 0;
-	printf("��但奪辰竪嘆奪 棚樽谷竪歎奪単嘆但樽 単嘆坦辰奪鱈嘆樽但, 棚樽嘆樽丹樽奪 探樽嘆竪嘆奪 辰樽叩��但竪嘆端\n損>\n");
+	printf("Введите количество студентов, которое хотите добавить\n");
 	scanf("%d", &kolv);
 	for (i = 0; i < kolv; i++)
 	{
-		printf("��但奪辰竪嘆奪 担��狸竪谷竪綻 単嘆坦辰奪鱈嘆��\n");
+		printf("Введите фамилию студента\n");
 		scanf("%20s", &stud[i].famil);
 		OemToCharA(stud[i].famil, stud[i].famil);
 
-		printf("��但奪辰竪嘆奪 竪狸耽 単嘆坦辰奪鱈嘆��\n");
+		printf("Введите имя студента\n");
 		scanf("%20s", &stud[i].name);
 		OemToCharA(stud[i].name, stud[i].name);
 
-		printf("��但奪辰竪嘆奪 鱈��巽但��鱈竪奪 担��棚坦谷端嘆奪嘆�� 単嘆坦辰奪鱈嘆��\n");
+		printf("Введите название факультета студента\n");
 		scanf("%20s", &stud[i].facult);
 		OemToCharA(stud[i].facult, stud[i].facult);
 
-		printf("��但奪辰竪嘆奪 鱈樽狸奪丹 巽��歎奪嘆鱈樽辿 棚鱈竪脱棚竪 単嘆坦辰奪鱈嘆��\n");
+		printf("Введите номер зачетной книжки студента\n");
 		scanf("%20d", &stud[i].Nomzach);
 	}
 
 	for (i = 0; i < kolv; i++)
 	{
-		printf("��嘆坦辰奪鱈嘆 %s %s 樽叩坦歎��奪嘆単耽 鱈�� 担��棚坦谷端嘆奪嘆奪 %s, 鱈樽狸奪丹 巽��歎転嘆鱈樽辿 棚鱈竪脱棚竪 %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
+		printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
 	}
 
 	char sl[20];
-	printf("�枘竪単棚 \n");
+	printf("Поиск  \n");
 	printf(">\a");
 	scanf("%s", sl);
 	OemToCharA(sl, sl);
@@ -147,41 +151,41 @@ int fifth()
 		int pr = 99;
 		if (strcmp(sl, stud[i].famil) == 0)
 		{
-			printf("��嘆坦辰奪鱈嘆 %s %s 樽叩坦歎��奪嘆単耽 鱈�� 担��棚坦谷端嘆奪嘆奪 %s, 鱈樽狸奪丹 巽��歎転嘆鱈樽辿 棚鱈竪脱棚竪 %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
+			printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
 			chet++;
 			pr = chet;
 		}
 		if (strcmp(sl, stud[i].name) == 0 && pr != chet)
 		{
-			printf("��嘆坦辰奪鱈嘆 %s %s 樽叩坦歎��奪嘆単耽 鱈�� 担��棚坦谷端嘆奪嘆奪 %s, 鱈樽狸奪丹 巽��歎転嘆鱈樽辿 棚鱈竪脱棚竪 %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
+			printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
 			chet++;
 			pr = chet;
 
 		}
 		if (strcmp(sl, stud[i].facult) == 0 && pr != chet)
 		{
-			printf("��嘆坦辰奪鱈嘆 %s %s 樽叩坦歎��奪嘆単耽 鱈�� 担��棚坦谷端嘆奪嘆奪 %s, 鱈樽狸奪丹 巽��歎転嘆鱈樽辿 棚鱈竪脱棚竪 %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
+			printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
 			chet++;
 			pr = chet;
 
 		}
 		/*if (strcmp(sl, nomzach2) == 0 && pr != chet)
 		{
-		printf("��嘆坦辰奪鱈嘆 %s %s 樽叩坦歎��奪嘆単耽 鱈�� 担��棚坦谷端嘆奪嘆奪 %s, 鱈樽狸奪丹 巽��歎転嘆鱈樽辿 棚鱈竪脱棚竪 %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
+		printf("Студент %s %s обучается на факультете %s, номер зачётной книжки %d\n", stud[i].famil, stud[i].name, stud[i].facult, stud[i].Nomzach);
 		chet++;
 		pr = chet;
-
 		}*/
 	}
 	if (chet == 0)
-		printf("|_______��竪歎奪達樽 鱈奪 鱈��辿辰奪鱈樽_______|\n");
+		printf("|_______Ничего не найдено_______|\n");
+	return 0;
 }
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
     int num;
-	printf("\n��于亠亟亳��亠 仆仂仄亠�� 亰舒亟舒仆亳��: \n");
+	printf("\nВведите номер задания: \n");
     scanf("%d", num);
     switch(num){
         case 1:
