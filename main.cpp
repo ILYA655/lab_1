@@ -113,22 +113,22 @@ int fifth()
 		char facult[40];
 		int Nomzach;
 	} stud[3];
-	int kolv = 0; //flag = 0;
+	int kolv = 0;
+	char famil1;
+	char name1;
+	char facult1;
 	printf("Введите количество студентов, которое хотите добавить\n");
 	scanf("%d", &kolv);
 	for (i = 0; i < kolv; i++)
 	{
 		printf("Введите фамилию студента\n");
-		scanf("%20s", &stud[i].famil);
-		OemToCharA(stud[i].famil, stud[i].famil);
+		cin >> stud[i].famil;
 
 		printf("Введите имя студента\n");
-		scanf("%20s", &stud[i].name);
-		OemToCharA(stud[i].name, stud[i].name);
+		cin >> stud[i].name;
 
 		printf("Введите название факультета студента\n");
-		scanf("%20s", &stud[i].facult);
-		OemToCharA(stud[i].facult, stud[i].facult);
+		cin >> stud[i].facult;
 
 		printf("Введите номер зачетной книжки студента\n");
 		scanf("%20d", &stud[i].Nomzach);
@@ -143,7 +143,6 @@ int fifth()
 	printf("Поиск  \n");
 	printf(">\a");
 	scanf("%s", sl);
-	OemToCharA(sl, sl);
 	printf("\n");
 	int chet = 0;
 	for (int i = 0; i < kolv; i++)
@@ -172,6 +171,7 @@ int fifth()
 	}
 	if (chet == 0)
 		printf("|_______Ничего не найдено_______|\n");
+	system("pause");
 	return 0;
 }
 
