@@ -2,7 +2,6 @@
 #include <locale.h>
 #include <time.h>
 #include <malloc.h>
-#include <Windows.h>
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
@@ -39,17 +38,17 @@ int second()
 	const int N = 4;
 	int sum = 0;
 	int mat[M][N];
- cout << "Matrix ";
+	cout << "Matrix \n";
 	for (int i = 0; i < M; i++)
 	{
 		for (int j = 0; j < N; j++)
 		{
- mat[i][j] = rand() % 9;
- cout << mat[i][j] << " ";
+			mat[i][j] = rand() % 9;
+			cout << mat[i][j] << " ";
 		}
- cout << endl;
+		cout << endl;
 	}
- cout << endl;
+	cout << endl;
 	for (int j = 0; j < N; j++)
 	{
 		sum = 0;
@@ -57,7 +56,7 @@ int second()
 		{
 			sum += mat[i][j];
 		}
-		cout << sum << endl;
+		cout << sum << " ";
 	}
 	return 0;
 }
@@ -65,9 +64,7 @@ int second()
 int third()
 {
     srand(time(NULL));
-	//printf("Разница между максимальным и минимальным значением\n");
 	int* mas2;
-
 	int n = 0;
 	printf("Введите кол-во элементов: ");
 	scanf("%d", &n);
@@ -84,22 +81,34 @@ int third()
 
 int fourth()
 {
-    srand(time(NULL));
-	printf("Задание 4:\n");
-	int sum = 0;
-	int mas[5][5] = { 0 };
-	for (int i = 0; i < 5; i++)
+	int n, m, sum;
+	cout << "Введите размерность матрицы: \n";
+	cout << "N: ";
+	cin >> n;
+	cout << "M: ";
+	cin >> m;
+	int **mas = new int*[m];
+	for (int i = 0; i < m; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		mas[i] = new int [n];
+		for (int j = 0; j < n; j++)
 		{
 			mas[i][j] = rand() % 100;
-			printf("%2d ", mas[i][j]);
-			sum = sum + mas[i][j];
+			cout << mas[i][j] << " ";
 		}
-		printf("\t--SUM--> %d\n", sum);
-		sum = 0;
+		cout << "\n";
 	}
-	printf("\n");
+	cout << "\n";
+	for (int j = 0; j < n; j++)
+	{
+		sum = 0;
+		for (int i = 0; i < m; i++)
+		{
+			sum += mas[i][j];
+		}
+		cout << sum << " ";
+	}
+	free(mas);
 	return 0;
 }
 
