@@ -109,6 +109,7 @@ int fourth()
 		cout << sum << " ";
 	}
 	free(mas);
+	system("pause");
 	return 0;
 }
 
@@ -188,9 +189,9 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
     int num = 0;
-	printf("\nВведите номер задания: \n");
-    //scanf("%d", num);
+	cout << "\nВведите номер задания: ";
 	cin >> num;
+	cout << "\n";
     switch(num){
         case 1:
             first();
